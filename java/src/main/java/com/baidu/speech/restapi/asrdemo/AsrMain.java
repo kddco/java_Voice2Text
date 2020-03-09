@@ -14,7 +14,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class AsrMain {
-
+//    AsrMain(String FILENAME){
+//        this.FILENAME=FILENAME;
+//    }
     private final boolean METHOD_RAW = false; // 默认以json方式上传音频文件
 
     //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
@@ -24,7 +26,7 @@ public class AsrMain {
     private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
 
     // 需要识别的文件
-    private final String FILENAME = "16k.pcm";
+    private String FILENAME = "result.wav"; //輸入需要識別的檔案名稱
 
     // 文件格式, 支持pcm/wav/amr 格式，极速版额外支持m4a 格式
     private final String FORMAT = FILENAME.substring(FILENAME.length() - 3);
@@ -44,12 +46,12 @@ public class AsrMain {
     private String SCOPE;
 
     //  普通版 参数
-    {
-        URL = "http://vop.baidu.com/server_api"; // 可以改为https
-        //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
-        DEV_PID = 1537;
-        SCOPE = "audio_voice_assistant_get";
-    }
+//    {
+//        URL = "https://vop.baidu.com/server_api"; // 可以改为https
+//        //  1537 表示识别普通话，使用输入法模型。1536表示识别普通话，使用搜索模型。 其它语种参见文档
+//        DEV_PID = 1537;
+//        SCOPE = "audio_voice_assistant_get";
+//    }
 
     // 自训练平台 参数
     /*{
@@ -58,13 +60,13 @@ public class AsrMain {
         LM_ID = 1234；
     }*/
 
-    /* 极速版 参数
+    // 极速版 参数
     {
-        URL =   "http://vop.baidu.com/pro_api"; // 可以改为https
+        URL =   "https://vop.baidu.com/pro_api"; // 可以改为https
         DEV_PID = 80001;
         SCOPE = "brain_enhanced_asr";
     }
-    */
+
 
     /* 忽略scope检查，非常旧的应用可能没有
     {
