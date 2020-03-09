@@ -8,6 +8,5 @@ public class demoMain {
     public static void main(String[] args) throws IOException, DemoException {
 //        AsrMain test=new AsrMain();
         ASR ars=new ASR();
-        ars.ToText();
     }
 }

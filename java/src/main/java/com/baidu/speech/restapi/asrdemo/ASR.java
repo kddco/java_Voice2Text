@@ -3,6 +3,7 @@ package com.baidu.speech.restapi.asrdemo;
 import com.baidu.speech.restapi.common.ConnUtil;
 import com.baidu.speech.restapi.common.DemoException;
 import com.baidu.speech.restapi.common.TokenHolder;
+import com.spreada.utils.chinese.ZHConverter;
 import org.json.JSONObject;
 
 import java.io.File;
@@ -77,8 +78,8 @@ public class ASR {
 
         FORMAT=FILENAME.substring(FILENAME.length() - 3);
         String result = run();
-        System.out.println("识别结束：结果是：");
-        System.out.println(result);
+//        System.out.println("识别结束：结果是："+result); 簡中
+        System.out.println("識別結果(繁中): "+tozhTW(result));
 
         // 如果显示乱码，请打开result.txt查看
 //        System.out.println(FILENAME.substring(FILENAME.length() - 3));
@@ -191,4 +192,11 @@ public class ASR {
         return str;
     }
 
+    public String tozhTW(String simpleChinese){
+        String traditionalStr=ZHConverter.convert(simpleChinese,ZHConverter.TRADITIONAL);
+        System.out.println(traditionalStr);
+        return traditionalStr;
+    }
+
 }
+
