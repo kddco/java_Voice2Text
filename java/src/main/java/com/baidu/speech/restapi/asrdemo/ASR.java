@@ -79,7 +79,8 @@ public class ASR {
         FORMAT=FILENAME.substring(FILENAME.length() - 3);
         String result = run();
 //        System.out.println("识别结束：结果是："+result); 簡中
-        System.out.println("識別結果(繁中): "+tozhTW(result));
+        result=tozhTW(result);
+        System.out.println("識別結果(繁中): "+result);
 
         // 如果显示乱码，请打开result.txt查看
 //        System.out.println(FILENAME.substring(FILENAME.length() - 3));
