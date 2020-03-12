@@ -74,7 +74,7 @@ public class ASR {
     }
     */
 
-    public void ToText() throws IOException, DemoException {
+    public String ToText() throws IOException, DemoException {
 
         FORMAT=FILENAME.substring(FILENAME.length() - 3);
         String result = run();
@@ -89,6 +89,7 @@ public class ASR {
         fo.write(result);
         fo.close();
         System.out.println("Result also wrote into " + file.getAbsolutePath());
+        return result;
     }
 
 
@@ -197,6 +198,13 @@ public class ASR {
         String traditionalStr=ZHConverter.convert(simpleChinese,ZHConverter.TRADITIONAL);
         System.out.println(traditionalStr);
         return traditionalStr;
+    }
+    public String analyse(String UserSpeakResult){
+        JSONObject resultJson = new JSONObject(UserSpeakResult); //生成一個接
+        UserSpeakResult = resultJson.get("result").toString();//拿result欄位的內容
+        UserSpeakResult = UserSpeakResult.replaceAll("[\\pP\\p{Punct}]","");//將非中文去除
+        System.out.println(UserSpeakResult);
+        return UserSpeakResult;
     }
 
 }
