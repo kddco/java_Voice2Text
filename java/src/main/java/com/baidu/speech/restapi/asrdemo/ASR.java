@@ -199,7 +199,7 @@ public class ASR {
         System.out.println(traditionalStr);
         return traditionalStr;
     }
-    public String analyse(String UserSpeakResult){
+    public String analyse(String UserSpeakResult){ //json格式擷取
         JSONObject resultJson = new JSONObject(UserSpeakResult); //生成一個接
         UserSpeakResult = resultJson.get("result").toString();//拿result欄位的內容
         UserSpeakResult = UserSpeakResult.replaceAll("[\\pP\\p{Punct}]","");//將非中文去除

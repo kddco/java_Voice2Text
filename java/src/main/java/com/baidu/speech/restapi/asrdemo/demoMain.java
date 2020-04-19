@@ -13,11 +13,5 @@ public class demoMain {
         UserSpeakResult = ars.analyse(UserSpeakResult);
 
 
-
-
-
-//        JSONStringer str=new JSONStringer();
-//        str.toString(result);
-
     }
 }
