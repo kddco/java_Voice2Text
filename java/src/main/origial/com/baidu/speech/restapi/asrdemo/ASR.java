@@ -19,10 +19,10 @@ public class ASR {
     private final boolean METHOD_RAW = false; // 默认以json方式上传音频文件
 
     //  填写网页上申请的appkey 如 $apiKey="g8eBUMSokVB1BHGmgxxxxxx"
-    private final String APP_KEY = "kVcnfD9iW2XVZSMaLMrtLYIz";
+    private final String APP_KEY = "9CGRzKRKjSIBWTj2AWwaSYNF";
 
     // 填写网页上申请的APP SECRET 如 $SECRET_KEY="94dc99566550d87f8fa8ece112xxxxx"
-    private final String SECRET_KEY = "O9o1O213UgG5LFn0bDGNtoRN3VWl2du6";
+    private final String SECRET_KEY = "w3lB50Z9nGjDZSqGip42xCrgdnGCrlgB";
 
     // 需要识别的文件
     private String FILENAME = "userInput.wav"; //輸入需要識別的檔案名稱
